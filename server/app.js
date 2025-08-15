@@ -34,12 +34,12 @@ const io = new Server(httpServer, {
 // Runs BEFORE the 'connection' event is triggered
 // Here: checks if 'user' is truthy before allowing the socket to connect
 // If `next()` is not called, the connection will be rejected
-const user = false; // Hardcoding user to false
-io.use((socket, next) => {
-  if (user) {
-    next(); // allow connection
-  }
-});
+// const user = false; // Hardcoding user to false
+// io.use((socket, next) => {
+//   if (user) {
+//     next(); // allow connection
+//   }
+// });
 
 io.on("connection", (socket) => {
   console.log("User Connected", socket.id);
